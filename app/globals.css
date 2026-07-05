@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+/* Visible keyboard focus everywhere, not just default browser outline */
+:focus-visible {
+  outline: 2px solid #2E7D32;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: #FFC107;
+  color: #14251A;
+}
+
+/* Respect reduced-motion preference: disable ambient/looping animation */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.section-eyebrow {
+  @apply font-mono text-xs tracking-[0.2em] uppercase text-forest;
+}
+
+.container-lilla {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+/* Swiper pagination bullets restyled to match brand */
+.swiper-pagination-bullet {
+  background: #1E2420;
+  opacity: 0.2;
+  width: 8px;
+  height: 8px;
+  transition: opacity 0.2s ease, background 0.2s ease, width 0.2s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2E7D32;
+  opacity: 1;
+  width: 22px;
+  border-radius: 9999px;
+}
